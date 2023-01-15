@@ -1,0 +1,13 @@
+$footerColor: #022B32;
+
+.footer {
+    display: flex;
+    align-items: center;
+    height: 78px;
+    background-color: $footerColor;
+
+    .footerCopyright {
+        color: #fff;
+        margin-left: 29px;
+    }
+}

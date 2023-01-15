@@ -1,0 +1,40 @@
+$headerColor: #022B32;
+
+.header {
+    height: 78px;
+    background-color: $headerColor;
+
+    .headerInnerBlock {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        height: 100%;
+
+
+        .logo {
+            background: url(../../../public/UKAD_logo.png) no-repeat;
+            width: 130px;
+            height: 100%;
+            background-position: 20px;
+        }
+
+        ul {
+            padding: 0;
+
+            li {
+                list-style-type: none;
+                display: inline-block;
+                margin-left: 55px;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+
+                a:hover,a:visited {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

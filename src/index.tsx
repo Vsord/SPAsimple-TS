@@ -1,19 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import ProductsContext from "./context/context";
+import { ProductT } from "./models/ProductT";
+import reportWebVitals from "./reportWebVitals";
+
+const Main = () => {
+  const [products, setProducts] = useState<Array<ProductT>>([]);
+  return (
+    <React.StrictMode>
+      <ProductsContext.Provider value={{ products, setProducts }}>
+        <App />
+      </ProductsContext.Provider>
+    </React.StrictMode>
+  );
+};
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root.render(<Main />);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
