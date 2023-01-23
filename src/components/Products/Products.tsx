@@ -11,7 +11,7 @@ const Products = () => {
     if (el.id <= 8) {
       return (
         <div className={styles.productsImageBlock} key={el.id}>
-          <img src={el.image} key={el.id} />
+          <img src={el.image} key={el.id} alt={el.title} />
           <h3>{el.title}</h3>
         </div>
       );

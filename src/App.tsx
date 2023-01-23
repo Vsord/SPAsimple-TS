@@ -1,4 +1,5 @@
-import React, { useEffect, useContext } from "react";
+import axios from "axios";
+import React, { useEffect, useContext, useState, ReactNode } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import styles from "./App.module.scss";
 import Footer from "./components/Footer/Footer";
@@ -11,21 +12,22 @@ import { ProductT } from "./models/ProductT";
 
 function App() {
   const { products, setProducts } = useContext(productsContext) as ContextT;
+  const [status, setStatus] = useState(0);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
-      .then((res) => {
-        if (res.status <= 200 && res.status < 300) {
-          return res.json();
-        } else {
-          const err = new Error("Something went wrong...");
-          throw err;
-        }
-      })
-      .then((products: ProductT[]) => setProducts(products));
-  }, [setProducts]);
-
-  console.log(products);
+    try {
+      const fetchProducts = async () => {
+        const response = await axios.get<ProductT[]>(
+          "https://fakestoreapi.com/products/"
+        );
+        setProducts(response.data);
+        setStatus(response.status);
+      };
+      fetchProducts();
+    } catch (err) {
+      console.error(err);
+    }
+  }, []);
 
   return (
     <BrowserRouter>
@@ -35,7 +37,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
         </Routes>
-        <Footer />
+        <Footer status={status} />
       </div>
     </BrowserRouter>
   );

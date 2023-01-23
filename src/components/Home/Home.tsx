@@ -10,12 +10,16 @@ import { ProductT } from "../../models/ProductT";
 const Home = () => {
   const { products } = useContext(productsContext) as ContextT;
 
-  function SampleArrow(props: React.HTMLAttributes<HTMLElement>) {
+  function SliderArrow(props: React.HTMLAttributes<HTMLElement>) {
     const { className, style, onClick } = props;
     return (
       <div
         className={className}
-        style={{ ...style, display: "block" }}
+        style={{
+          ...style,
+          display: "block",
+          zIndex: "10000",
+        }}
         onClick={onClick}
       />
     );
@@ -28,15 +32,14 @@ const Home = () => {
     slidesToShow: 3,
     slidesToScroll: 3,
     initialSlide: 0,
-    nextArrow: <SampleArrow />,
-    prevArrow: <SampleArrow />,
+    nextArrow: <SliderArrow />,
+    prevArrow: <SliderArrow />,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          infinite: true,
           dots: true,
         },
       },
@@ -60,9 +63,9 @@ const Home = () => {
               <div className="homeBlock" key={item.id}>
                 <div className="homeProductsTop">
                   <img src={item.image} alt={item.title} />
-                  <h3>{item.title}</h3>
                 </div>
                 <div className="homeProductsBottom">
+                  <h3>{item.title}</h3>
                   <h3>Price: {item.price}$</h3>
                   <p>Category: {item.category}</p>
                 </div>

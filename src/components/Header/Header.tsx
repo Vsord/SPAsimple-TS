@@ -7,14 +7,15 @@ const Header = () => {
     <div className={styles.header}>
       <div className={styles.headerInnerBlock}>
         <div className={styles.logo}></div>
-        <ul>
-          <li>
-            <NavLink to="/">HOME</NavLink>
-          </li>
-          <li>
-            <NavLink to="/products">PRODUCTS</NavLink>
-          </li>
-        </ul>
+        <div className={styles.burgerMenu}>
+          <div className={styles.burgerMenuLine}></div>
+          <div className={styles.burgerMenuLine}></div>
+          <div className={styles.burgerMenuLine}></div>
+        </div>
+        <nav>
+          <NavLink to="/">HOME</NavLink>
+          <NavLink to="/products">PRODUCTS</NavLink>
+        </nav>
       </div>
     </div>
   );

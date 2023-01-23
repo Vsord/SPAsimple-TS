@@ -1,6 +1,5 @@
 .productsBlock {
-    min-height: calc(86vh - 64px);
-
+        
     h1 {
         margin: 40px 0px 16px 20px;
     }
@@ -53,8 +52,12 @@
             }
 
             img {
-                width: 225px;
-                height: 225px;
+                width: 333px;
+                height: 347px;
+                @media (max-width: 430px) {
+                    width: 265px;
+                    height: 317px;
+                }
             }
         }
     }

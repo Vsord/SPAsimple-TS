@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Footer.module.scss";
 
-const Footer = () => {
+const Footer = (props: any) => {
   return (
-    <div className={styles.footer}>
-      <div className={styles.footerCopyright}>2021 © copyright</div>
+    <div className={props.status === 200 ? styles.footer : styles.footerBottom}>
+      <div className={styles.footerCopyright}>2021 © COPYRIGHT</div>
     </div>
   );
 };

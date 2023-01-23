@@ -1,5 +1,20 @@
 $footerColor: #022B32;
 
+.footerBottom {
+    display: flex;
+    align-items: center;
+    height: 78px;
+    background-color: $footerColor;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+
+    .footerCopyright {
+        color: #fff;
+        margin-left: 29px;
+    }
+}
+
 .footer {
     display: flex;
     align-items: center;
