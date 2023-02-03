@@ -1,18 +1,17 @@
 import axios from "axios";
-import React, { useEffect, useContext, useState, ReactNode } from "react";
+import React, { useEffect, useContext } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import styles from "./App.module.scss";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
-import Products from "./components/Products/Products";
 import productsContext from "./context/context";
 import { ContextT } from "./models/ContextT";
 import { ProductT } from "./models/ProductT";
+import Home from "./view/Home/Home";
+import Products from "./view/Products/Products";
 
 function App() {
-  const { products, setProducts } = useContext(productsContext) as ContextT;
-  const [status, setStatus] = useState(0);
+  const { setProducts } = useContext(productsContext) as ContextT;
 
   useEffect(() => {
     try {
@@ -21,13 +20,12 @@ function App() {
           "https://fakestoreapi.com/products/"
         );
         setProducts(response.data);
-        setStatus(response.status);
       };
       fetchProducts();
     } catch (err) {
       console.error(err);
     }
-  }, []);
+  }, [setProducts]);
 
   return (
     <BrowserRouter>
@@ -37,7 +35,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
         </Routes>
-        <Footer status={status} />
+        <Footer />
       </div>
     </BrowserRouter>
   );

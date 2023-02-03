@@ -1,16 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styles from "./Header.module.scss";
+import "./Header.scss";
 
 const Header = () => {
   return (
-    <div className={styles.header}>
-      <div className={styles.headerInnerBlock}>
-        <div className={styles.logo}></div>
-        <div className={styles.burgerMenu}>
-          <div className={styles.burgerMenuLine}></div>
-          <div className={styles.burgerMenuLine}></div>
-          <div className={styles.burgerMenuLine}></div>
+    <div className="header">
+      <div className="headerInnerBlock">
+        <div className="logo"></div>
+        <div className="burgerMenu">
+          <div className="burgerMenuLine"></div>
+          <div className="burgerMenuLine"></div>
+          <div className="burgerMenuLine"></div>
         </div>
         <nav>
           <NavLink to="/">HOME</NavLink>

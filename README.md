@@ -1,7 +1,7 @@
 # UKAD Products shop site
 
 This project was created by Create React App.
-A small, adaptive for devices of 360px,768px,1024px,1366px,1920px.
+A small, adaptive for different devices SPA shop app.
 
 ## Setup guide
 

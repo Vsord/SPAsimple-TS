@@ -1,6 +1,6 @@
 $footerColor: #022B32;
 
-.footerBottom {
+.footer {
     display: flex;
     align-items: center;
     height: 78px;
@@ -8,18 +8,6 @@ $footerColor: #022B32;
     position: absolute;
     bottom: 0px;
     width: 100%;
-
-    .footerCopyright {
-        color: #fff;
-        margin-left: 29px;
-    }
-}
-
-.footer {
-    display: flex;
-    align-items: center;
-    height: 78px;
-    background-color: $footerColor;
 
     .footerCopyright {
         color: #fff;

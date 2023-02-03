@@ -1,0 +1,16 @@
+.products {
+    max-width: 98%;
+    margin: 0 auto;
+
+    h1 {
+        margin: 40px 0px 16px 0px;
+    }
+
+    .productsBlock {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fill, 442px);
+        grid-gap: 40px 0px;
+        margin-bottom: 159px;
+    }
+}

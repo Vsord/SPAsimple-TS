@@ -1,0 +1,52 @@
+@import "../../components/Header/Header.scss";
+$arrowUrl: "../../../public/Mask.png";
+$slickArrowSize: 68px !important;
+$slickArrowPosition: 7px !important;
+$arrowInnerBlockSize: 100%;
+
+.home {
+    margin: 87px 71px;
+    overflow: hidden;
+
+    @media(max-width: $tabletSize) {
+        margin: 87px 0px;
+    }
+
+    h1 {
+        margin-left: 37px;
+    }
+}
+
+.slick-disabled {
+    opacity: 0;
+}
+
+.slick-arrow::before {
+    display: none;
+}
+
+.slick-arrow {
+    border-radius: 50px;
+    width: $slickArrowSize;
+    height: $slickArrowSize;
+    z-index: 1000;
+}
+
+.slick-prev {
+    left: $slickArrowPosition;
+}
+
+.slick-next {
+    right: $slickArrowPosition;
+}
+
+.slick-arrow .arrow-inner {
+    background: url($arrowUrl) no-repeat;
+    background-position: center;
+    width: $arrowInnerBlockSize;
+    height: $arrowInnerBlockSize;
+}
+
+.prev-arr {
+    transform: rotate(180deg);
+}

@@ -1,0 +1,22 @@
+.cardBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 37px;
+    height: 551px;
+    border: 3px solid #F2F2F2;
+
+    .cardBlockTop {
+        text-align: -webkit-center;
+        object-fit: contain;
+
+        img {
+            max-width: 100%;
+            max-height: 350px;
+        }
+    }
+
+    .cardBlockBottom {
+        padding: 0 28px 28px 28px;
+    }
+}

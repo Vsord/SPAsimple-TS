@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import ProductsCard from "../../components/ProductsCard/ProductsCard";
 import productsContext from "../../context/context";
 import { ContextT } from "../../models/ContextT";
 import { ProductT } from "../../models/ProductT";
@@ -7,21 +8,16 @@ import styles from "./Products.module.scss";
 const Products = () => {
   const { products } = useContext(productsContext) as ContextT;
 
-  const product = products.map((el: ProductT) => {
-    if (el.id <= 8) {
-      return (
-        <div className={styles.productsImageBlock} key={el.id}>
-          <img src={el.image} key={el.id} alt={el.title} />
-          <h3>{el.title}</h3>
-        </div>
-      );
+  const product = products.map((item: ProductT) => {
+    if (item.id <= 8) {
+      return <ProductsCard product={item} key={item.id} />;
     }
   });
 
   return (
-    <div className={styles.productsBlock}>
+    <div className={styles.products}>
       <h1>Products page</h1>
-      <div className={styles.products}>{product}</div>
+      <div className={styles.productsBlock}>{product}</div>
     </div>
   );
 };

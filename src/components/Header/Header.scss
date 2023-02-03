@@ -1,4 +1,7 @@
 $headerColor: #022B32;
+$logoUrl: "../../../public/UKAD_logo.png";
+$burgerMenuSize: 30px;
+$tabletSize: 768px;
 
 .header {
     height: 78px;
@@ -10,13 +13,12 @@ $headerColor: #022B32;
         align-items: center;
         height: 100%;
 
-        @media (max-width: 768px) {
+        @media (max-width: $tabletSize) {
             justify-content: space-between;
         }
 
-
         .logo {
-            background: url(../../../public/UKAD_logo.png) no-repeat;
+            background: url($logoUrl) no-repeat;
             width: 130px;
             height: 100%;
             background-position: 20px;
@@ -26,16 +28,16 @@ $headerColor: #022B32;
             margin-right: 20px;
             display: none;
             cursor: pointer;
-            width: 30px;
-            height: 30px;
+            width: $burgerMenuSize;
+            height: $burgerMenuSize;
             margin-top: 2px;
-            
+
             .burgerMenuLine {
                 border-bottom: 2px solid white;
                 margin-bottom: 10px;
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: $tabletSize) {
                 display: block;
             }
         }
@@ -47,13 +49,13 @@ $headerColor: #022B32;
                 text-decoration: none;
             }
 
-            a:focus {
-                text-decoration: underline;
-            }
-
-            @media (max-width: 768px) {
+            @media (max-width: $tabletSize) {
                 display: none;
             }
         }
     }
+}
+
+.active {
+    border-bottom: 1px solid #fff;
 }
